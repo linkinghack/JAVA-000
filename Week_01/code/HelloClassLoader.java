@@ -2,8 +2,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Constructor;
-import java.util.Arrays;
 
 /**
  * HelloClassLoader
@@ -18,7 +16,6 @@ public class HelloClassLoader extends ClassLoader {
         }
 
         try {
-            
             HelloClassLoader classLoader = new HelloClassLoader();
             byte[] classBytes = classLoader.loadClassFile(helloClassFileName);
             Class<?> helloClass = classLoader.parseClassFromBytes("Hello", classBytes);
